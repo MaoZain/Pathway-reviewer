@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1b525f3f-714d-491a-aaa1-5da2f01c7c1b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pathway_module2/all_gene_names.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pathway_module2/formulate_relation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pathway_module2/interface_backup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pathway_module2/interface_multi_images.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pathway_module2/interface_with_relation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pathway_module2/output/rotated_relation/relation_model.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pathway_module2/pipeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pathway_module2/post_process_for_relation_back.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/Base-RelationRetinaNet.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pathway_module2/Base-RelationRetinaNet.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/output/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pathway_module2/output/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/output/inference/pathway_val/coco_instances_results.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/output/inference/pathway_val/instances_predictions.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/output/inference/pathway_val/pathway_val_coco_format.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/output/inference/pathway_val/pathway_val_coco_format.json.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/output/last_checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/pathway_module2/output/last_checkpoint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/output/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pathway_module2/output/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/output/log.txt.rank1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/output/metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/pathway_module2/output/metrics.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/pathway_evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/pathway_module2/pathway_evaluation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/plain_train_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/pathway_module2/plain_train_net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/post_process_for_relation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/relation_anchor_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/relation_retinanet.py" beforeDir="false" afterPath="$PROJECT_DIR$/pathway_module2/relation_retinanet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/tools/box_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/pathway_module2/tools/box_label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/tools/label_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/pathway_module2/tools/label_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/tools/relation_data_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/pathway_module2/tools/relation_data_tool_old.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathway_module2/train_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/pathway_module2/train_net.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/pathway_module2" />
+  </component>
+  <component name="ProjectId" id="1eBX2kXLkJVf2NGPUjBSFyJ4ENA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b525f3f-714d-491a-aaa1-5da2f01c7c1b" name="Default Changelist" comment="" />
+      <created>1593795754384</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593795754384</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

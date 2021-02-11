@@ -1,0 +1,10 @@
+.menu_item{
+	margin-left:10% !important; 
+	font-size:20px !important;
+	font-weight:bold !important;
+}
+
+.headerContainer{
+	height:70px;
+	line-height: 70px !important;
+}

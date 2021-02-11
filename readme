@@ -1,0 +1,23 @@
+1.安装：
+前端：react --> npm 启动端口3336 配置 --> 隐藏文件.en中
+后端：koa --> nodejs@latest 监听端口listen(5000)
+数据库：--> mysql
+
+2.数据库
+user:pathway
+pass: pathway123
+直接导入：
+.py 文件 --> run it
+数据库迁移
+a. create database pathway
+b. use pathway
+c. source /path/file.sql
+
+3.准备启动：
+./web
+a.del node_modules
+b.npm install
+
+4.启动
+后端：node app.js
+前端: npm start

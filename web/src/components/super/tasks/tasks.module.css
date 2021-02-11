@@ -1,0 +1,38 @@
+.main{
+    width:1100px;
+    min-height: 300px;
+    margin:0 auto;
+    box-shadow:0 0 2em rgba(0,0,0,0.2);
+    margin-top:100px;
+    padding:20px;
+}
+
+.main p{
+    color: #1890ff;
+    font-size:16px;
+    font-family:inherit;
+    font-weight:500;
+}
+
+.hint{
+    display: table-cell;
+}
+
+.selecter{
+    width: 150px !important;
+    padding-left: 20px !important;
+    display:table-cell !important;
+}
+
+.table{
+    padding-top: 20px;
+}
+
+.review{
+    color:#1890ff;
+    font-size: 14px;
+}
+
+.review:hover{
+    color:rgb(0, 60, 255);
+}

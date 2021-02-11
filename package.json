@@ -1,0 +1,38 @@
+{
+    "name": "pathway",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "keywords": [
+        "koa",
+        "async"
+    ],
+    "author": "maozain",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "archiver": "^3.0.0",
+        "async-busboy": "^0.7.0",
+        "busboy": "^0.2.14",
+        "koa": "^2.6.2",
+        "koa-bodyparser": "^4.3.0",
+        "koa-cors": "0.0.16",
+        "koa-router": "7.0.0",
+        "koa-send": "^5.0.0",
+        "koa-session-minimal": "^3.0.4",
+        "koa-timeout-v2": "^1.0.0",
+        "koa2-cors": "^2.0.6",
+        "mime": "^2.4.4",
+        "mysql": "^2.18.1",
+        "mz": "2.4.0",
+        "node-iplocate": "^1.0.1",
+        "nodemailer": "^4.6.4",
+        "nunjucks": "^3.2.1",
+        "react-ga": "^2.5.3",
+        "rimraf": "^2.6.2",
+        "sequelize": "^5.21.5",
+        "underscore": "^1.9.1"
+    }
+}
