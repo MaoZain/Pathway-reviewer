@@ -2,7 +2,7 @@
 Tools to correct results online
 # Usage
 ## local
-create new folder ./db
+create new folder ./db  
 put .sql into ./db
 create new folder ./static/testImg
 put Image into ./static/testImg
