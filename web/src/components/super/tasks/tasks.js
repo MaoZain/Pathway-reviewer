@@ -63,6 +63,10 @@ class Tasks extends React.PureComponent{
 		this.props.review(record);
 	}
 
+	handleChange = (value) => {
+		this.props.selectTasksByStatu(value);
+	}
+
 	// componentWillMount = ()  => {
 	// 	$.ajax(
 	// 		{
@@ -125,9 +129,9 @@ class Tasks extends React.PureComponent{
 		<div id='main' className={style.main}>
 			<p className={style.hint}>Select your data:</p>
 			<div id='selecter' className={style.selecter}>
-				<Select defaultValue="Genecard"  onChange={this.handleChange}>
-					<Option value="Genecard">example1</Option>
-					<Option value="Swiss">example2</Option>
+				<Select defaultValue="0"  onChange={this.handleChange}>
+					<Option value="1">reviewed</Option>
+					<Option value="0">unreviewed</Option>
 				</Select>
 			</div>
 			<div id = 'data' className = {style.table}>

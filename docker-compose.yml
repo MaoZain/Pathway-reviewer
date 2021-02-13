@@ -3,7 +3,7 @@ version: '3'
 services:
   mysql-db:
     image: mysql:5.7
-    container_name: mysql_container
+    container_name: "db"
     environment:
       MYSQL_HOST: localhost
       MYSQL_ROOT_PASSWORD: 123456
@@ -15,7 +15,10 @@ services:
     volumes:
       - ./db:/docker-entrypoint-initdb.d
   server:
-    build: .
+    #build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: "Pathway-Backend"
     depends_on:
       - mysql-db
@@ -33,7 +36,10 @@ services:
       - '6000:6000'
     command: sh -c "cd /pathway && node app.js"
   web:
-    build: ./web
+    #build: ./web
+    build:
+      context: ./web
+      dockerfile: Dockerfile
     container_name: "Pathway-Frontend"
     command: sh -c "export PORT=3336 && npm start"
     volumes:

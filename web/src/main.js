@@ -634,7 +634,9 @@ class Main extends Component {
       showEmpty:true,
     });
     this.clearResult();
-    this.uploadFigure();
+    if(this.state.figureStatus[0] == 0){
+      this.uploadFigure();
+    }
   }
 
   delFigure = () => {
@@ -667,6 +669,45 @@ class Main extends Component {
     this.uploadFigure();
   }
 
+  selectTasksByStatu = (value) => {
+    $.ajax(
+      {
+        type:'post',
+        url:'selectDataStatu',
+        data:{
+          statu:value,
+        },
+        success:data => {
+          if(data.length > 0) {
+            let name = [], status = [],ID = [];
+            data.map((value) => {
+              ID.push(value.fig_id)
+              name.push(value.fig_name);
+              status.push(value.review_status)
+            })
+            this.setState({
+              fig_id:ID,
+              figureName:name,
+              figureStatus:status,
+              figId:data[0].fig_id,
+            })
+          }else{
+            alert("There are no reviewed img")
+          }
+					
+				},
+        error: (XMLHttpRequest, textStatus, errorThrown) => {
+          console.log(
+            'status', XMLHttpRequest.status, '\n',
+            'readydtate', XMLHttpRequest.readyState, '/n',
+            'text', textStatus, '/n',
+            'error', errorThrown
+          );
+        },
+      }
+    )
+  }
+
 	render(){
     console.log(this.state.dictId)
 		return (
@@ -680,6 +721,7 @@ class Main extends Component {
         <div style={{display:this.state.menu=='tasks' ? 'block':'none'}}>
           <Tasks
             review = {this.review}
+            selectTasksByStatu = {this.selectTasksByStatu}
             fig_id={this.state.fig_id}
             figureName={this.state.figureName}
             figureStatus={this.state.figureStatus}
