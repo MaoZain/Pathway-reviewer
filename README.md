@@ -8,6 +8,8 @@ create new folder ./static/testImg
 put Image into ./static/testImg  
 commond run "docker-compose up"  
 ## docker
-pull docker images into local  
+download file docker-compose.yml into ./
+add a dictionary ./web
+command "docker-compoe pull"
 run command "docker-compose up"  
  

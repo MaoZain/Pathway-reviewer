@@ -19,6 +19,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: maozain/pathway-reviewer-backend
     container_name: "Pathway-Backend"
     depends_on:
       - mysql-db
@@ -40,6 +41,7 @@ services:
     build:
       context: ./web
       dockerfile: Dockerfile
+    image: maozain/pathway-reviewer-frontend
     container_name: "Pathway-Frontend"
     command: sh -c "export PORT=3336 && npm start"
     volumes:
