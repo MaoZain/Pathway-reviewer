@@ -1,13 +1,13 @@
 # Pathway-reviewer
 Tools to correct results online
 # Usage
-## local
+## local deployment
 create new folder ./db  
 put .sql into ./db  
 create new folder ./static/testImg  
 put Image into ./static/testImg  
 commond run "docker-compose up"  
-## docker
+## or docker deployment
 download file docker-compose.yml into ./  
 add a dictionary ./db  
 put .sql into ./db  

@@ -5,4 +5,4 @@ WORKDIR /pathway
 COPY package.json ./
 RUN npm install
 
-COPY . /pathway
+COPY . /pathway/
