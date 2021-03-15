@@ -14,8 +14,8 @@ services:
     restart: unless-stopped
     volumes:
       - ./db:/docker-entrypoint-initdb.d
-      - ./db/mysql/data:/var/lib/mysql
-      - ./db/mysql/conf.d:/etc/mysql/conf.d
+      # # - ./db/mysql/data:/var/lib/mysql
+      # # - ./db/mysql/conf.d:/etc/mysql/conf.d
   server:
     build: .
     # build:
@@ -25,9 +25,9 @@ services:
     # container_name: "Pathway-Backend"
     depends_on:
       - mysql-db
-    # volumes:
-    #   - .:/pathway
-    #   - '/pathway/node_modules'
+    volumes:
+      - .:/pathway
+      - '/pathway/node_modules'
     tty: true
     stdin_open: true
     expose: 
@@ -47,9 +47,9 @@ services:
     image: maozain/pathway-reviewer-frontend
     # container_name: "Pathway-Frontend"
     command: sh -c "export PORT=3339 && npm start"
-    # volumes:
-    #   - ./web:/web
-    #   - '/web/node_modules'
+    volumes:
+      - ./web:/web
+      - '/web/node_modules'
     tty: true
     stdin_open: true
     expose: 

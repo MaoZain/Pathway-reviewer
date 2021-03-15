@@ -7,6 +7,7 @@ let fn_confirmEdit = async(ctx, next) => {
         SET review_status = 1\
         WHERE fig_id = ${figId};`
     )
+    ctx.response.body = "success";
 }
 
 module.exports ={

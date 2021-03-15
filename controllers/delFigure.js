@@ -7,6 +7,7 @@ let fn_delFigure = async(ctx, next) => {
         `DELETE FROM Figure\
         WHERE fig_id = ${figId};`
     );
+    ctx.response.body = del;
 }
 
 module.exports ={

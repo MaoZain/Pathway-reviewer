@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './tasks.module.css';
 import $ from 'jquery';
-import {Select, Table, Popconfirm} from 'antd';
+import {Select, Table, Popconfirm, Input} from 'antd';
 
 const { Option } = Select;
 
@@ -36,6 +36,10 @@ class Tasks extends React.PureComponent{
 				title:'Status',
 				dataIndex:'status',
 				key:'status',
+				sorter: {
+					compare: (a, b) => a.chinese - b.chinese,
+					multiple: 3,
+				  },
 			},
 			{
 				title:'Review',
@@ -65,6 +69,11 @@ class Tasks extends React.PureComponent{
 
 	handleChange = (value) => {
 		this.props.selectTasksByStatu(value);
+	}
+
+	selectFiguresByName = (e) => {
+		// console.log(e.target.value);
+		this.props.selectFiguresByName(e.target.value)
 	}
 
 	// componentWillMount = ()  => {
@@ -121,19 +130,26 @@ class Tasks extends React.PureComponent{
 				{
 					id:this.state.fig_id[index],
 					name:value,
-					status:this.state.figureStatus[index],
+					status:this.state.figureStatus[index] == 0 ? "unreviewed":"reviewed",
 				}
 			)
 		})
 		return (
 		<div id='main' className={style.main}>
-			<p className={style.hint}>Select your data:</p>
+			<p className={style.hint}>Input your name to select your data:</p>
+			<div id='selecter' className={style.selecter}>
+				<Input
+					size='middle'
+					onPressEnter = {this.selectFiguresByName}
+				></Input>
+			</div>
+			{/* <p className={style.hint}>Select your data:</p>
 			<div id='selecter' className={style.selecter}>
 				<Select defaultValue="0"  onChange={this.handleChange}>
 					<Option value="1">reviewed</Option>
 					<Option value="0">unreviewed</Option>
 				</Select>
-			</div>
+			</div> */}
 			<div id = 'data' className = {style.table}>
 			    <Table 
 					columns={this.columns} 

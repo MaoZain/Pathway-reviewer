@@ -53,6 +53,7 @@ class Main extends Component {
       figureName:[],
       figureStatus:[],
       figId:1,
+      currentReviewer:'',
 		}
   }
 
@@ -451,7 +452,7 @@ class Main extends Component {
   }
 
   updateOutput = (data) => {
-    console.log(data)
+    // console.log(data)
     let name = [], isMatch = [],aliasGeneId = [],dictId = [];
     let dic = {}, eLeft = [], eTop = [], eWidth = [], eHeight = [], geneId = [], dictId_geneName = {};
     data[0].map((value, index) => {
@@ -548,6 +549,46 @@ class Main extends Component {
 		)
   }
 
+  uploadFiguresByName = (name) => {
+    // console.log(name)
+    $.ajax(
+      {
+        type:'post',
+        url:'selectFigureByName',
+        data:{
+          name:name
+        },
+        success:data => {
+          // console.log(data)
+          let name = [], status = [],ID = [];
+          if(data.length > 0) {
+            data.map((value) => {
+              ID.push(value.fig_id)
+              name.push(value.fig_name);
+              status.push(value.review_status)
+            })
+            this.setState({
+              fig_id:ID,
+              figureName:name,
+              figureStatus:status,
+              figId:data[0].fig_id,
+            })
+          }else{
+            alert("There are tasks for you")
+          }
+        },
+        error: (XMLHttpRequest, textStatus, errorThrown) => {
+          console.log(
+            'status', XMLHttpRequest.status, '\n',
+            'readydtate', XMLHttpRequest.readyState, '/n',
+            'text', textStatus, '/n',
+            'error', errorThrown
+          );
+        },
+      }
+    )
+  }
+
   review = (record) => {
     // console.log(record)
     //load output
@@ -616,9 +657,15 @@ class Main extends Component {
         data:{
           'figId':this.state.currentFigId,
         },
-        // success:data => {
-        //   console.log(data)
-        // },
+        success:data => {
+          if(this.state.figureStatus[0] == 0){
+            if(this.setState.currentReviewer == ''){
+              this.uploadFigures();
+            }else{
+              this.uploadFiguresByName(this.state.currentReviewer)
+            }
+          }
+        },
         error: (XMLHttpRequest, textStatus, errorThrown) => {
           console.log(
             'status', XMLHttpRequest.status, '\n',
@@ -634,9 +681,7 @@ class Main extends Component {
       showEmpty:true,
     });
     this.clearResult();
-    if(this.state.figureStatus[0] == 0){
-      this.uploadFigure();
-    }
+    
   }
 
   delFigure = () => {
@@ -648,9 +693,16 @@ class Main extends Component {
         data:{
           'figId':this.state.currentFigId,
         },
-        // success:data => {
-        //   console.log(data)
-        // },
+        success:data => {
+          console.log("sucess to del");
+          if(this.state.figureStatus[0] == 0){
+            if(this.setState.currentReviewer == ''){
+              this.uploadFigures();
+            }else{
+              this.uploadFiguresByName(this.state.currentReviewer)
+            }
+          }
+        },
         error: (XMLHttpRequest, textStatus, errorThrown) => {
           console.log(
             'status', XMLHttpRequest.status, '\n',
@@ -708,8 +760,15 @@ class Main extends Component {
     )
   }
 
+  selectFiguresByName = (name) => {
+    this.uploadFiguresByName(name);
+    this.setState({
+      currentReviewer:name
+    })
+  }
+
 	render(){
-    console.log(this.state.dictId)
+    // console.log(this.state.dictId)
 		return (
       <div id = 'main'>
         <div id = 'head'>
@@ -722,6 +781,7 @@ class Main extends Component {
           <Tasks
             review = {this.review}
             selectTasksByStatu = {this.selectTasksByStatu}
+            selectFiguresByName = {this.selectFiguresByName}
             fig_id={this.state.fig_id}
             figureName={this.state.figureName}
             figureStatus={this.state.figureStatus}

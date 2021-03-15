@@ -16,11 +16,11 @@ let fn_deleteElement = async(ctx, next) => {
         `SELECT *\
         FROM Gene\
         WHERE fig_id = ${figId};`
-      );
+    );
     let relation = await fn_query(
-    `SELECT activator, receptor, relation_BBox, relation_type, relation_id\
-    FROM Relation\
-    WHERE fig_id = ${figId};`
+        `SELECT activator, receptor, relation_BBox, relation_type, relation_id\
+        FROM Relation\
+        WHERE fig_id = ${figId};`
     )
     let result = [element, relation];
     ctx.response.body = result;
