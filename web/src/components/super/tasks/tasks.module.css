@@ -21,7 +21,7 @@
 .selecter{
     width: 150px !important;
     padding-left: 20px !important;
-    display:table-cell !important;
+    display:inline !important;
 }
 
 .table{

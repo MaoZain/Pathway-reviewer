@@ -1,9 +1,9 @@
 const mysql = require('mysql');
 const pool  = mysql.createPool({
-    host     : 'db',   // database address
-    user     : 'root',    // user
-    password : '123456',  // password
-    database : 'pathway'  // database
+    host     : 'localhost',   // database address
+    user     : 'pathway',    // user
+    password : 'pathway147',  // password
+    database : 'pathway_review'  // database
 });
 
 //connect to databse

@@ -122,28 +122,28 @@ class Edit extends React.Component {
         dataIndex: 'id',
         key: 'id',
         width: '15%',
-        ...this.getColumnSearchProps('id'),
+        // ...this.getColumnSearchProps('id'),
       },
       {
         title: 'Starter',
         dataIndex: 'start',
         key: 'start',
         width: '20%',
-        ...this.getColumnSearchProps('start'),
+        // ...this.getColumnSearchProps('start'),
       },
       {
         title: 'Relation_category',
         dataIndex: 'relation',
         key: 'relation',
         width: '30%',
-        ...this.getColumnSearchProps('relation'),
+        // ...this.getColumnSearchProps('relation'),
       },
       {
         title: 'Receptor',
         dataIndex: 'receptor',
         key: 'receptor',
         width: '20%',
-        ...this.getColumnSearchProps('receptor'),
+        // ...this.getColumnSearchProps('receptor'),
       },
       {
         title: 'Delete',
@@ -727,11 +727,11 @@ class Edit extends React.Component {
           e.map((value,index)=>{
             let imgStyle = {
               position:'absolute', 
-              left:this.props.imgUrlLeft[index] , 
-              top:this.props.imgUrlTop[index] , 
-              width:this.props.imgUrlWidth[index] ,
-              height:this.props.imgUrlHeight[index], 
-              border:'1px solid #1890ff'
+              left:this.props.imgUrlLeft[index]-2 , 
+              top:this.props.imgUrlTop[index]-2 , 
+              width:this.props.imgUrlWidth[index]+4 ,
+              height:this.props.imgUrlHeight[index]+4, 
+              
             }
             return <a id={index} 
                     onClick = {() => {this.clickElement(index)}} 
@@ -976,6 +976,7 @@ class Edit extends React.Component {
                         display:this.state.showAddRelation ? 'none':'block',
                         marginLeft:'50px', marginTop:'50px'
                         }}>
+                          (click id to find the relaiton)
                         <Table 
                         style={{width:'600px'}}
                         tableLayout="fixed" 

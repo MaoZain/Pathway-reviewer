@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './tasks.module.css';
 import $ from 'jquery';
-import {Select, Table, Popconfirm, Input} from 'antd';
+import {Select, Table, Popconfirm, Input, Button} from 'antd';
 
 const { Option } = Select;
 
@@ -71,9 +71,17 @@ class Tasks extends React.PureComponent{
 		this.props.selectTasksByStatu(value);
 	}
 
-	selectFiguresByName = (e) => {
+	selectFiguresByName = (value) => {
 		// console.log(e.target.value);
-		this.props.selectFiguresByName(e.target.value)
+		this.props.selectName(value)
+	}
+
+	selectDataset = (value) => {
+		this.props.selectDataset(value);
+	}
+
+	selectTasks = () => {
+		this.props.selectTasks()
 	}
 
 	// componentWillMount = ()  => {
@@ -136,13 +144,26 @@ class Tasks extends React.PureComponent{
 		})
 		return (
 		<div id='main' className={style.main}>
-			<p className={style.hint}>Input your name to select your data:</p>
+			
 			<div id='selecter' className={style.selecter}>
-				<Input
-					size='middle'
-					onPressEnter = {this.selectFiguresByName}
-				></Input>
+			<p className={style.hint}>Choose the Dataset:</p>
+				<Select style={{ width: 120 }} onChange={this.selectDataset}>
+					<Option value="lung">Lung Cancer</Option>
+					<Option value="pathway1">pathway1</Option>
+				</Select>
 			</div>
+			
+			<div id='selecter' className={style.selecter}>
+			<p className={style.hint}>Choose your name:</p>
+				<Select style={{ width: 120 }} onChange={this.selectFiguresByName}>
+					<Option value="mark">Mark</Option>
+					<Option value="mihail">Mihail</Option>
+					<Option value="dana">Dana</Option>
+				</Select>
+			</div>
+			<Button type="primary" 
+			style={{marginLeft:'30px'}}
+			onClick = {this.selectTasks} >Select</Button>
 			{/* <p className={style.hint}>Select your data:</p>
 			<div id='selecter' className={style.selecter}>
 				<Select defaultValue="0"  onChange={this.handleChange}>

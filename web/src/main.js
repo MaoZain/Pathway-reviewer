@@ -54,11 +54,12 @@ class Main extends Component {
       figureStatus:[],
       figId:1,
       currentReviewer:'',
+      currentDataset:'',
 		}
   }
 
   componentWillMount = () =>{
-    this.uploadFigure()
+    // this.uploadFigure()
   }
 
   menuClick = (key) => {
@@ -549,13 +550,14 @@ class Main extends Component {
 		)
   }
 
-  uploadFiguresByName = (name) => {
+  selectFiguresByName = (dataset, name) => {
     // console.log(name)
     $.ajax(
       {
         type:'post',
         url:'selectFigureByName',
         data:{
+          dataset:dataset,
           name:name
         },
         success:data => {
@@ -621,6 +623,7 @@ class Main extends Component {
 				type:'post',
 				url:'/readImg',
 				data:{
+          'dataset':this.state.currentDataset,
 					'name':record.name,
 				},
 				success: data => {
@@ -760,12 +763,23 @@ class Main extends Component {
     )
   }
 
-  selectFiguresByName = (name) => {
-    this.uploadFiguresByName(name);
+  selectName = (name) => {
     this.setState({
       currentReviewer:name
     })
   }
+
+  selectDataset = (value) => {
+    // console.log(value)
+		this.setState({
+      currentDataset:value
+    })
+	}
+
+	selectTasks = () => {
+    this.selectFiguresByName(this.state.currentDataset, this.state.currentReviewer)
+		// console.log(this.state.currentDataset)
+	}
 
 	render(){
     // console.log(this.state.dictId)
@@ -780,8 +794,10 @@ class Main extends Component {
         <div style={{display:this.state.menu=='tasks' ? 'block':'none'}}>
           <Tasks
             review = {this.review}
+            selectDataset = {this.selectDataset}
+            selectTasks = {this.selectTasks}
             selectTasksByStatu = {this.selectTasksByStatu}
-            selectFiguresByName = {this.selectFiguresByName}
+            selectName = {this.selectName}
             fig_id={this.state.fig_id}
             figureName={this.state.figureName}
             figureStatus={this.state.figureStatus}
@@ -842,7 +858,7 @@ class Main extends Component {
           <BackTop />
           <strong className="site-back-top-basic"></strong>
         </>
-        <footer className={style.footer}>Pathyway ©2020 Created by DBL</footer>
+        <footer className={style.footer}>Pathway ©2020 Created by DBL</footer>
         </div>
     );
 	}
