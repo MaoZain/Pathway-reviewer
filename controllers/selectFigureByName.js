@@ -7,7 +7,7 @@ let fn_selectFigureByName = async(ctx, next) =>{
     let result = await fn_query(
       `SELECT fig_id,fig_name,review_status,reviewer_name\
        FROM Figure\
-       WHERE review_status = 0 AND reviewer_name = '${name}' AND fig_path = 'static/imgs/${dataset}/';`
+       WHERE review_status = 0 AND reviewer_name = '${name}' AND fig_path like 'static/imgs/${dataset}/%';`
     )
     ctx.response.body = await result;
 }
