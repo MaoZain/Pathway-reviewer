@@ -709,7 +709,7 @@ class Main extends Component {
       showEmpty:true,
     });
     this.clearResult();
-    this.uploadFigure();
+    // this.uploadFigure();
   }
 
   selectTasksByStatu = (value) => {
