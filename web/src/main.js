@@ -661,13 +661,7 @@ class Main extends Component {
           'figId':this.state.currentFigId,
         },
         success:data => {
-          if(this.state.figureStatus[0] == 0){
-            if(this.setState.currentReviewer == ''){
-              this.uploadFigures();
-            }else{
-              this.uploadFiguresByName(this.state.currentReviewer)
-            }
-          }
+          this.selectFiguresByName(this.state.currentDataset, this.state.currentReviewer)
         },
         error: (XMLHttpRequest, textStatus, errorThrown) => {
           console.log(
