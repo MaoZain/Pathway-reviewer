@@ -149,7 +149,7 @@ class Tasks extends React.PureComponent{
 			<p className={style.hint}>Choose the Dataset:</p>
 				<Select style={{ width: 120 }} onChange={this.selectDataset}>
 					<Option value="lung">Lung Cancer</Option>
-					<Option value="pathway1">pathway1</Option>
+					<Option value="validation">Validation</Option>
 				</Select>
 			</div>
 			
@@ -159,6 +159,11 @@ class Tasks extends React.PureComponent{
 					<Option value="mark">Mark</Option>
 					<Option value="mihail">Mihail</Option>
 					<Option value="dana">Dana</Option>
+					<Option value="Ziting">Ziting</Option>
+					<Option value="Joshua">Joshua</Option>
+					<Option value="Yijie">Yijie</Option>
+					<Option value="Stuart">Stuart</Option>
+					<Option value="Yibo">Yibo</Option>
 				</Select>
 			</div>
 			<Button type="primary" 

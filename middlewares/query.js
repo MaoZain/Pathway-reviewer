@@ -1,10 +1,18 @@
 const mysql = require('mysql');
+//product
 const pool  = mysql.createPool({
     host     : 'localhost',   // database address
     user     : 'pathway',    // user
     password : 'pathway147',  // password
     database : 'pathway_review'  // database
 });
+//develop in my own machine
+// const pool  = mysql.createPool({
+//   host     : 'localhost',   // database address
+//   user     : 'root',    // user
+//   password : 'root1234',  // password
+//   database : 'pathway_600'  // database
+// });
 
 //connect to databse
 let fn_query = function( sql, values ) {
