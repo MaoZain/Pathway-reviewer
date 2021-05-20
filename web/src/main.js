@@ -401,6 +401,11 @@ class Main extends Component {
           dic[value.gene_id] = value.ocr_gene_name;
           dictId.push(value.dic_id);
         }
+      }else if( value.is_match == 3 ){
+        console.log(333333)
+        dic[value.gene_id] = value.uncertain_gene_name;
+        dictId.push("none");
+        name.push(value.uncertain_gene_name)
       }else{
         dic[value.gene_id] = value.ocr_gene_name;
         dictId.push(value.dict_id);
@@ -478,7 +483,12 @@ class Main extends Component {
           dic[value.gene_id] = value.ocr_gene_name;
           dictId.push(value.dic_id);
         }
-      }else{
+      }else if( value.is_match == 3 ){
+        console.log(333333)
+        dic[value.gene_id] = value.uncertain_gene_name;
+        dictId.push("none");
+        name.push(value.uncertain_gene_name)
+      }else if( value.is_match == 0){
         dic[value.gene_id] = value.ocr_gene_name;
         dictId.push(value.dict_id);
         name.push(value.ocr_gene_name)
@@ -770,7 +780,7 @@ class Main extends Component {
 	}
 
 	render(){
-    // console.log(this.state.dictId)
+    console.log(this.state.geneName)
 		return (
       <div id = 'main'>
         <div id = 'head'>

@@ -686,6 +686,8 @@ class Edit extends React.Component {
       return style.redCase;
     }else if(this.state.isMatch[record.id - 1] == 2){
       return style.yellowCase;
+    }else if(this.state.isMatch[record.id - 1] == 3){
+      return style.blueCase;
     }else{
       return null;
     }

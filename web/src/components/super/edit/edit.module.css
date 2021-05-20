@@ -74,6 +74,9 @@
 .yellowCase{
     color:var(--warning);
 }
+.blueCase{
+    color:blue;
+}
 .geneSelect{
     
     font-family: Arial;
