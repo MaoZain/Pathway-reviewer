@@ -37,7 +37,9 @@ class Tasks extends React.PureComponent{
 				dataIndex:'status',
 				key:'status',
 				sorter: {
-					compare: (a, b) => a.chinese - b.chinese,
+					compare: (a, b) => {
+						return a.status.length - b.status.length;
+					},
 					multiple: 3,
 				  },
 			},
