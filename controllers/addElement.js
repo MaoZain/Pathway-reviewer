@@ -14,9 +14,37 @@ let fn_addElement = async(ctx, next) => {
         WHERE gene_name = '${name}' OR alias like '${name},%' OR alias like '%,${name},%' OR alias like '%,${name}' ;`
     );
     if (dictId.length == 0) {
-        ctx.response.body = 0;
+        // ctx.response.body = 0;
+        let geneId = await fn_query(
+            `SELECT MAX(gene_id)+1 as id\
+            FROM Gene`
+        );
+        let ocrId = await fn_query(
+            `SELECT ocr_id\
+            FROM Gene\
+            WHERE fig_id = ${figId};`
+        );
+        console.log(ocrId)
+        let insert = await fn_query(
+            `INSERT INTO Gene\
+            (gene_id, fig_id, dict_id, ocr_id,gene_BBox, is_match, uncertain_gene_name)\
+            VALUE\
+            (${geneId[0].id}, ${figId}, null, ${ocrId[0].ocr_id}, '${bbox}', 3, '${name}');`
+        );
+        let element = await fn_query(
+            `SELECT *\
+            FROM Gene\
+            WHERE fig_id = ${figId};`
+          );
+        let relation = await fn_query(
+            `SELECT activator, receptor, relation_BBox, relation_type, relation_id\
+            FROM Relation\
+            WHERE fig_id = ${figId};`
+        )
+        let result = [element, relation];
+        ctx.response.body = result;
     }else{
-        console.log('19',dictId)
+        // console.log('19',dictId)
         let geneId = await fn_query(
             `SELECT MAX(gene_id)+1 as id\
             FROM Gene`

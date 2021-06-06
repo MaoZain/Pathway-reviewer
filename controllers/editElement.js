@@ -8,10 +8,10 @@ let fn_editElement = async(ctx, next) => {
         WHERE gene_name = '${newName}' OR alias like '${newName},%' OR alias like '%,${newName},%' OR alias like '%,${newName}' ;`
     );
     if (dictId.length == 0) {
-        console.log(4546)
+        // console.log("no dictid")
         let add_uncertain_name = await fn_query(
             `UPDATE Gene\
-            SET uncertain_gene_name = '${newName}',is_match = 3\
+            SET uncertain_gene_name = '${newName}',is_match = 3, dict_id = null\
             WHERE gene_id = ${geneId};
             `
         );
