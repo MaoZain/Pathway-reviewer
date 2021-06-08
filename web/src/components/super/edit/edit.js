@@ -877,6 +877,7 @@ class Edit extends React.Component {
       <div id = "inputRelation" 
       className = {style.inputRelation}
       style={{display: this.state.showAddRelation ? 'block':'none'}}>
+        Add relation Bbox: Please make sure the startor-Bboxing(black rect) and receptor-Bboxing（red recrt） is shown in the image!
         <div id = "1" className = {style.inputStartor}>
           <pre>Starter:  </pre>
           {inputStartor}
