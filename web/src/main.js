@@ -613,9 +613,11 @@ class Main extends Component {
 				},
 				success: data => {
 					if (data == 0) {
-            message.warning('Figure is inexistent')
+            message.warning('Data is inexistent')
+          }else{
+            this.loadOutput(data);
           }
-          this.loadOutput(data);
+          
 				},
         error: (XMLHttpRequest, textStatus, errorThrown) => {
           console.log(
